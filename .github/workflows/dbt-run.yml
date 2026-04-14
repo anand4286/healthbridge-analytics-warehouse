@@ -1,0 +1,10 @@
+name: dbt-run
+on:
+  schedule:
+    - cron: "0 5 * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "dbt run --models +claims_core"
